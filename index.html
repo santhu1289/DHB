@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>District Hospital Ballari</title>
+    <!-- <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    /> -->
+    <link rel="icon" type="image/png" href="/img/icon/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 64; // Favicon size
+        canvas.height = 64;
+        const ctx = canvas.getContext("2d");
+
+        // Draw FontAwesome hospital icon
+        const fontSize = 48; // Adjust size to fit canvas
+        ctx.font = `${fontSize}px FontAwesome`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "green"; // Hospital icon color
+        ctx.fillText("\uf47d", canvas.width / 2, canvas.height / 2); // Unicode for `fa-hospital`
+
+        // Set canvas as favicon
+        const link = document.querySelector("link[rel='icon']");
+        link.href = canvas.toDataURL("image/png");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
