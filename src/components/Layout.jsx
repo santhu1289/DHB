@@ -7,9 +7,10 @@ import { useTheme } from "./ThemeContext"; // Import the custom hook
 import QRS from "../assets/images/ors.png";
 import eHospital from "../assets/images/eHospital.png";
 
+// eslint-disable-next-line react/prop-types
 const ScrollableSidebar = ({ isOpen, isLightOn, children }) => (
   <aside
-    className={`fixed left-0 top-30 h-[calc(100vh-10rem)] ${
+    className={`sticky top-[4rem] left-0 h-auto min-h-[calc(100vh-4rem)] ${
       isOpen ? "w-64" : "w-16"
     } transition-all duration-300 overflow-y-auto ${
       isLightOn ? "bg-green-800" : "bg-gray-800"
@@ -66,7 +67,11 @@ const Layout = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   return (
-    <div className={`flex flex-col min-h-screen ${isLightOn ? "bg-white" : "bg-gray-900"}`}>
+    <div
+      className={`flex flex-col min-h-screen ${
+        isLightOn ? "bg-white" : "bg-gray-900"
+      }`}
+    >
       {/* Header */}
       <header>
         {/* Top Bar */}
@@ -183,7 +188,9 @@ const Layout = () => {
       <div className="flex">
         <ScrollableSidebar isOpen={isSidebarOpen} isLightOn={isLightOn}>
           <div className="flex items-center justify-between p-4">
-            {isSidebarOpen && <h2 className="text-lg font-bold top-20">Services</h2>}
+            {isSidebarOpen && (
+              <h2 className="text-lg font-bold top-20">Services</h2>
+            )}
             <button
               onClick={toggleSidebar}
               className={`p-2 rounded-md ${
@@ -220,7 +227,7 @@ const Layout = () => {
                   icon: "fas fa-syringe",
                 },
                 {
-                  href: "/services/orthopedics",
+                  href: "/services/ortho",
                   label: "Orthopedics",
                   icon: "fas fa-bone",
                 },
@@ -228,6 +235,11 @@ const Layout = () => {
                   href: "/services/gynecology",
                   label: "Gynecology",
                   icon: "fas fa-female",
+                },
+                {
+                  href: "/services/anesthesia",
+                  label: "Anesthesia",
+                  icon: "fas fa-procedures",
                 },
                 {
                   href: "/services/laboratory",
@@ -238,6 +250,11 @@ const Layout = () => {
                   href: "/services/radiology",
                   label: "Radiology",
                   icon: "fas fa-x-ray",
+                },
+                {
+                  href: "/services/pharmacy",
+                  label: "Pharmacy",
+                  icon: "fas fa-pills",
                 },
                 {
                   href: "/services/emergency",
@@ -271,21 +288,23 @@ const Layout = () => {
                   href: "https://ors.gov.in/orsportal/",
                   src: QRS,
                   label: "Online Registration System",
-                }, // Assuming QRS is an imported image or a variable holding the image source
+                },
                 {
                   href: "https://ehospital.gov.in/ehospitalsso/",
                   src: eHospital,
                   label: "e-Hospital",
                 },
                 {
-                  href: "#",
+                  href: "https://esanjeevani.mohfw.gov.in/",
                   label: "e-Sanjivini",
                   icon: "fas fa-clinic-medical",
                 },
               ].map((logo, index) => (
                 <li key={index}>
                   <a
-                    href={logo.href || "#"} // Provide a default href if none exists
+                    href={logo.href || "#"}
+                    target="_blank" // Opens link in a new tab
+                    rel="noopener noreferrer" // Security measure
                     className={`flex items-center space-x-3 p-2 rounded-md ${
                       isLightOn
                         ? "hover:bg-green-600 text-gray-200 hover:text-gray-900"
@@ -297,10 +316,10 @@ const Layout = () => {
                       <img
                         src={logo.src}
                         alt={logo.label}
-                        className="w-8 h-8 rounded-md object-cover" // Styling for the image
+                        className="w-8 h-8 rounded-md object-cover"
                       />
                     ) : (
-                      <i className={`${logo.icon} text-2xl`}></i> // Render icon if no image is available
+                      <i className={`${logo.icon} text-2xl`}></i>
                     )}
                     {isSidebarOpen && <span>{logo.label}</span>}
                   </a>
@@ -311,22 +330,20 @@ const Layout = () => {
         </ScrollableSidebar>
 
         {/* Main Content */}
-        <main 
-          className={`flex-1 p-6 overflow-y-auto transition-all duration-300 ${
-            isSidebarOpen ? "ml-64" : "ml-16"
-          }`}
-        >
+        <main className="flex-1 p-6 overflow-y-auto transition-all duration-300">
           <Outlet />
         </main>
       </div>
 
       {/* Footer Section */}
       <footer className="bg-green-800 mt-auto">
-        <div className="container mx-auto py-5">
+        <div className="container mx-auto py-5 px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
             {/* Hospital Info & Map */}
             <div>
-              <h1 className="text-2xl font-bold mb-4">District Hospital, Ballari</h1>
+              <h1 className="text-2xl font-bold mb-4">
+                District Hospital, Ballari
+              </h1>
               <div className="mb-4">
                 <iframe
                   className="rounded-md border border-white w-full"
@@ -361,13 +378,20 @@ const Layout = () => {
             {/* Quick Links */}
             <div>
               <h5 className="text-lg font-semibold mb-4">Quick Links</h5>
-              {['About Us', 'Contact Us', 'Our Services', 'Terms & Conditions', 'Support'].map((link) => (
+              {[
+                "About Us",
+                "Contact Us",
+                "Our Services",
+                "Terms & Conditions",
+                "Support",
+              ].map((link) => (
                 <a
                   key={link}
                   href="#"
                   className="block text-green-200 hover:text-green-400 transition mb-2"
                 >
-                  <i className="fa fa-angle-right mr-2"></i>{link}
+                  <i className="fa fa-angle-right mr-2"></i>
+                  {link}
                 </a>
               ))}
             </div>
@@ -375,13 +399,13 @@ const Layout = () => {
             {/* Newsletter */}
             <div>
               <h5 className="text-lg font-semibold mb-4">Newsletter</h5>
-              <div className="relative">
+              <div className="flex items-center bg-green-700 rounded-lg overflow-hidden">
                 <input
-                  className="w-full bg-green-700 text-green-200 placeholder-green-300 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="flex-1 bg-green-700 text-green-200 placeholder-green-300 py-3 px-4 focus:outline-none focus:ring-2 focus:ring-green-500 w-[70%]"
                   type="email"
                   placeholder="Your email"
                 />
-                <button className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-500 transition">
+                <button className="bg-green-600 text-white px-4 py-2 hover:bg-green-500 transition w-[30%]">
                   Sign Up
                 </button>
               </div>

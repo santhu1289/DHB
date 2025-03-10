@@ -13,6 +13,13 @@ import GeneralSurgery from "./pages/services/GeneralSurgery";
 import { ThemeProvider } from "./components/ThemeContext";
 // Add other service pages similarly
 import "./index.css";
+import Orthopedic from "./pages/services/Orthopedic";
+import Anesthesia from "./pages/services/Anesthesia";
+import Gynecology from "./pages/services/Gynecology";
+import Laboratory from "./pages/services/Laboratory";
+import Radiology from "./pages/services/Radiology";
+import Pharmacy from "./pages/services/Pharmacy";
+import EmergencyServices from "./pages/services/EmergencyServices";
 
 function App() {
   return (
@@ -35,6 +42,16 @@ function App() {
               />
               <Route path="services/paediatrics" element={<Paediatrics />} />
               <Route path="services/surgery" element={<GeneralSurgery />} />
+              <Route path="services/ortho" element={<Orthopedic />} />
+              <Route path="services/anesthesia" element={<Anesthesia />} />
+              <Route path="services/gynecology" element={<Gynecology />} />
+              <Route path="services/laboratory" element={<Laboratory />} />
+              <Route path="services/radiology" element={<Radiology />} />
+              <Route path="services/pharmacy" element={<Pharmacy />} />
+              <Route
+                path="services/emergency"
+                element={<EmergencyServices />}
+              />
               {/* Add other service routes here */}
             </Route>
           </Routes>

@@ -2,16 +2,16 @@
 import React from "react";
 import { teamData } from "../../components/TeamSection";
 
-const GeneralSurgery = () => {
-  const generalSurgeryData = teamData.find(
-    (dept) => dept.department === "General Surgery"
+const Anesthesia = () => {
+  const AnesthesiaData = teamData.find(
+    (dept) => dept.department === "Anaesthesia"
   );
 
-  if (!generalSurgeryData) {
+  if (!AnesthesiaData) {
     return (
       <div className="p-6 bg-red-100 text-red-900 rounded-lg text-center">
         <p className="text-lg font-semibold">
-          Data for the General Surgery department is not available.
+          Data for the Anesthesia department is not available.
         </p>
       </div>
     );
@@ -21,32 +21,31 @@ const GeneralSurgery = () => {
     <div className="p-6 bg-gradient-to-r from-green-300 to-green-500 text-green-900 rounded-lg">
       <section className="bg-white shadow-lg rounded-lg p-6 mb-6">
         <h2 className="text-2xl font-bold flex items-center mb-3 border-b-2 border-green-400 pb-2">
-          <i className="fas fa-user-md mr-2 text-green-600"></i> About General
-          Surgery
+          <i className="fas fa-user-md mr-2 text-green-600"></i> About
+          Anesthesia
         </h2>
         <p className="text-gray-700 leading-relaxed">
-          General Surgery is a specialized medical field that focuses on the
-          diagnosis, treatment, and surgical management of various conditions
-          affecting different parts of the body. It involves procedures ranging
-          from minor outpatient surgeries to complex inpatient operations.
+          Anesthesia is a critical medical specialty focused on pain management
+          and patient care before, during, and after surgical procedures. The
+          department ensures patient safety and comfort using advanced
+          anesthetic techniques, including general, regional, and local
+          anesthesia.
         </p>
       </section>
 
       <section className="bg-green-50 shadow-lg rounded-lg p-6 mb-6">
         <h2 className="text-2xl font-bold flex items-center mb-3 border-b-2 border-green-400 pb-2">
           <i className="fas fa-heartbeat mr-2 text-green-600"></i> Common
-          Conditions Treated
+          Conditions Managed
         </h2>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>Appendicitis</li>
-          <li>Gallbladder Diseases (e.g., Gallstones, Cholecystitis)</li>
-          <li>Hernias (e.g., Inguinal, Umbilical, Incisional)</li>
-          <li>Thyroid Disorders requiring Surgery</li>
-          <li>Breast Conditions (e.g., Lumps, Tumors)</li>
-          <li>
-            Gastrointestinal Disorders (e.g., Peptic Ulcers, Bowel Obstruction)
-          </li>
-          <li>Soft Tissue Infections and Abscesses</li>
+          <li>Preoperative Patient Assessment</li>
+          <li>Pain Management for Surgical Procedures</li>
+          <li>Postoperative Pain Control</li>
+          <li>Spinal and Epidural Anesthesia</li>
+          <li>Critical Care and Emergency Anesthesia</li>
+          <li>Management of Chronic Pain Conditions</li>
+          <li>Sedation for Diagnostic and Therapeutic Procedures</li>
         </ul>
       </section>
 
@@ -56,21 +55,34 @@ const GeneralSurgery = () => {
           Offered
         </h2>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>Emergency and Trauma Surgery</li>
-          <li>Minimally Invasive Laparoscopic Procedures</li>
-          <li>Elective Surgeries</li>
-          <li>Wound Care and Management</li>
-          <li>Cancer Surgeries (e.g., Breast, Thyroid)</li>
-          <li>Preoperative and Postoperative Care</li>
-          <li>Consultation and Surgical Planning</li>
+          <li>General Anesthesia for Major Surgeries</li>
+          <li>Regional and Local Anesthesia</li>
+          <li>Pain Management and Palliative Care</li>
+          <li>Critical Care and Intensive Monitoring</li>
+          <li>Advanced Airway Management</li>
+          <li>Perioperative Anesthesia Consultation</li>
+          <li>Sedation Services for Minor Procedures</li>
         </ul>
+      </section>
+
+      <section className="bg-green-50 shadow-lg rounded-lg p-6 mb-6">
+        <h2 className="text-2xl font-bold flex items-center mb-3 border-b-2 border-green-400 pb-2">
+          <i className="fas fa-user-shield mr-2 text-green-600"></i> Why Choose
+          Us?
+        </h2>
+        <p className="text-gray-700 leading-relaxed">
+          The Anesthesia department is equipped with the latest monitoring and
+          anesthetic delivery systems, ensuring patient safety and comfort. Our
+          experienced anesthesiologists use evidence-based techniques to provide
+          individualized care, minimizing risks and enhancing recovery outcomes.
+        </p>
       </section>
 
       <section className="bg-white shadow-lg rounded-lg p-6">
         <div className="container mx-auto py-6 px-4">
           <div className="text-center mb-6">
             <h1 className="text-3xl font-bold text-green-800 hover:text-green-600 transition duration-300">
-              General Surgery Team
+              Anesthesia Team
             </h1>
           </div>
           <div className="mb-6 rounded-lg overflow-x-auto">
@@ -84,7 +96,7 @@ const GeneralSurgery = () => {
                 </tr>
               </thead>
               <tbody>
-                {(generalSurgeryData.employees || []).map((employee, index) => (
+                {(AnesthesiaData.employees || []).map((employee, index) => (
                   <tr
                     key={index}
                     className="hover:bg-green-100 transition duration-200"
@@ -112,4 +124,4 @@ const GeneralSurgery = () => {
   );
 };
 
-export default GeneralSurgery;
+export default Anesthesia;
