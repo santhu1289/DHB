@@ -8,14 +8,14 @@ const SupportServices = () => {
       title: "Pharmacy",
       description:
         "The Pharmacy Department has devoted a sincere effort to putting forth standardized clinical pharmacy implementation guidelines that include a clinical pharmacist job description, a hospital pharmacist job description, etc.",
-      link: "#",
+      link: "/services/pharmacy",
     },
     {
       icon: "fa-flask",
       title: "24x7 Laboratory",
       description:
         "Clinical laboratories are healthcare facilities providing a wide range of laboratory procedures which aid the physicians in carrying out the diagnosis, treatment, and management of patients.",
-      link: "#",
+      link: "/services/laboratory",
     },
     {
       icon: "fa-bowl-food",
@@ -29,7 +29,7 @@ const SupportServices = () => {
       title: "Ambulance Services",
       description:
         "The ambulance service provides first aid to the patient and transport them to the nearest Community Health Centre or Government hospitals.",
-      link: "#",
+      link: "/services/emergency",
     },
     {
       icon: "fa-tint",
@@ -43,7 +43,7 @@ const SupportServices = () => {
       title: "Emergency Services",
       description:
         "Care of emergency and accident patients is of paramount importance in saving lives, preventing disability, and for achieving the intended health goals of the Nation.",
-      link: "#",
+      link: "/services/emergency",
     },
     {
       icon: "fa-brain",

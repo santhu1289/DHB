@@ -6,6 +6,9 @@ import "font-awesome/css/font-awesome.min.css";
 import { useTheme } from "./ThemeContext"; // Import the custom hook
 import QRS from "../assets/images/ors.png";
 import eHospital from "../assets/images/eHospital.png";
+import FloatingBackground from "./FloatingBackground ";
+//import { FloatingBackground } from "./FloatingBackground ";
+
 
 // eslint-disable-next-line react/prop-types
 const ScrollableSidebar = ({ isOpen, isLightOn, children }) => (
@@ -66,6 +69,7 @@ const Layout = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
   return (
     <div
       className={`flex flex-col min-h-screen ${
@@ -188,8 +192,9 @@ const Layout = () => {
       <div className="flex">
         <ScrollableSidebar isOpen={isSidebarOpen} isLightOn={isLightOn}>
           <div className="flex items-center justify-between p-4">
+          <FloatingBackground />
             {isSidebarOpen && (
-              <h2 className="text-lg font-bold top-20">Services</h2>
+              <h2 className="text-lg text-white font-bold top-20">Services</h2>
             )}
             <button
               onClick={toggleSidebar}
@@ -416,11 +421,16 @@ const Layout = () => {
         {/* Copyright */}
         <div className="bg-green-900 py-4">
           <div className="container mx-auto text-center text-green-200">
-            &copy;{" "}
-            <a href="#" className="text-green-400 hover:underline">
-              www.districthospitalballari.com
-            </a>
-            , All Rights Reserved. | Last Updated on 01/11/2024
+            <p>
+              &copy; 2024 District Hospital Ballari. Licensed under{" "}
+              <a
+                href="https://www.gnu.org/licenses/gpl-3.0.html"
+                target="_blank"
+              >
+                GPL-3.0
+              </a>
+              .
+            </p>
           </div>
         </div>
       </footer>
