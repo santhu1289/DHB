@@ -22,7 +22,7 @@ const Pharmacy = () => {
       return (
         <div className="p-6 bg-red-100 text-red-900 rounded-lg text-center">
           <p className="text-lg font-semibold">
-            Data for the General Medicine department is not available.
+            Data for the Pharmacy Department is not available.
           </p>
         </div>
       );

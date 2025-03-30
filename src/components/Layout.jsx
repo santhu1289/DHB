@@ -81,7 +81,7 @@ const Layout = () => {
         {/* Top Bar */}
         <div
           className={`py-2 text-sm ${
-            isLightOn ? "bg-green-800 text-white" : "bg-gray-700"
+            isLightOn ? "bg-green-800 text-white" : "bg-gray-700 text-white"
           }`}
         >
           <div className="container mx-auto flex flex-wrap justify-between items-center px-4">
@@ -99,13 +99,13 @@ const Layout = () => {
 
             {/* Visitors Count */}
             <div className="flex items-center space-x-2">
-              {/* <i className="fas fa-users mr-2"></i>
-              <span>Visitors: {visitorsCount}</span> */}
-     <span>Visitors:       
+               <i className="fas fa-users mr-2"></i>
+            {/* <span>Visitors: {visitorsCount}</span> */}
+     <span>Visitors:   </span>   
      
      <img src="https://hitwebcounter.com/counter/counter.php?page=20016860&style=0002&nbdigits=6&type=ip&initCount=02309" title="Counter Widget" alt="Visit counter For Websites"   border="0" />
     
-</span>
+
             </div>
 
             {/* Light/Dark Mode Toggle */}

@@ -454,6 +454,92 @@ export const teamData = [
       // Add more employees...
     ],
   },
+  {
+    department: "Lab",
+    employees: [
+      {
+        id: 1,
+        name: "Dr Uday Shankar",
+        post: "Pathologist",
+        qualification: "MBBS, MD Pathology",
+      },
+      {
+        id: 2,
+        name: "Om Prakash",
+        post: "Senior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 3,
+        name: "Pradeep",
+        post: "Senior Lab Technical Officer",
+        qualification: "---",
+     
+      },
+      {
+        id: 4,
+        name: "Mallikarjun H M",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 5,
+        name: "Mustaq Ahmed",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 6,
+        name: "Nasima Begum",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 7,
+        name: "Savitha Jogul",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 8,
+        name: "Radha S M",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 9,
+        name: "R Jeevan",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 10,
+        name: "Geetha R G",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 11,
+        name: "Mamatha B",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 12,
+        name: "Pavitra B R",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+      {
+        id: 13,
+        name: "Raghavendra",
+        post: "Junior Lab Technical Officer",
+        qualification: "---",
+      },
+
+      // Add more employees...
+    ],
+  },
   // Add more departments...
 ];
 
@@ -474,6 +560,7 @@ const departmentIcons = {
   "Casuality Medical Officers": "fa fa-ambulance",
   "General Duty Medical Officers": "fa fa-user-md",
   "Pharmacy": "fa fa-pills",
+  "Lab": "fa fa-flask",
 };
 
 const EmployeeRow = ({ id, name, post, qualification }) => (
