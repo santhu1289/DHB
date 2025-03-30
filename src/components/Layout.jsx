@@ -24,25 +24,25 @@ const ScrollableSidebar = ({ isOpen, isLightOn, children }) => (
 );
 
 const Layout = () => {
-  const [visitorsCount, setVisitorsCount] = useState(0);
+  //const [visitorsCount, setVisitorsCount] = useState(0);
   const { isLightOn, toggleLight } = useTheme(); // Use the context to get theme state and toggle function
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const API_URL = "http://localhost:5000/api/visitors";
 
-  // Fetch visitors count from the server
-  useEffect(() => {
-    const fetchVisitorsCount = async () => {
-      try {
-        const response = await axios.get(API_URL);
-        setVisitorsCount(response.data.count); // Set the initial visitors count from the API
-      } catch (error) {
-        console.error("Error fetching visitors count:", error);
-      }
-    };
+  // // Fetch visitors count from the server
+  // useEffect(() => {
+  //   const fetchVisitorsCount = async () => {
+  //     try {
+  //       const response = await axios.get(API_URL);
+  //       setVisitorsCount(response.data.count); // Set the initial visitors count from the API
+  //     } catch (error) {
+  //       console.error("Error fetching visitors count:", error);
+  //     }
+  //   };
 
-    fetchVisitorsCount();
-  }, []);
+  //   fetchVisitorsCount();
+  // }, []);
 
   // Increment visitors count once per session
   useEffect(() => {
@@ -53,8 +53,8 @@ const Layout = () => {
           await axios.post(API_URL);
 
           // Fetch updated count from the server
-          const response = await axios.get(API_URL);
-          setVisitorsCount(response.data.count);
+          //const response = await axios.get(API_URL);
+          //setVisitorsCount(response.data.count);
 
           // Mark this session as visited
           sessionStorage.setItem("visitorVisited", "true");
@@ -99,8 +99,13 @@ const Layout = () => {
 
             {/* Visitors Count */}
             <div className="flex items-center space-x-2">
-              <i className="fas fa-users mr-2"></i>
-              <span>Visitors: {visitorsCount}</span>
+              {/* <i className="fas fa-users mr-2"></i>
+              <span>Visitors: {visitorsCount}</span> */}
+     <span>Visitors:       
+     
+     <img src="https://hitwebcounter.com/counter/counter.php?page=20016662&style=0002&nbdigits=5&type=page&initCount=2878" title="Counter Widget" alt="Visit counter For Websites"   border="0" />
+    
+</span>
             </div>
 
             {/* Light/Dark Mode Toggle */}
