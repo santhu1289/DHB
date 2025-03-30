@@ -405,6 +405,55 @@ export const teamData = [
       // Add more employees...
     ],
   },
+  {
+    department: "Pharmacy",
+    employees: [
+      {
+        id: 1,
+        name: "Anjineya D",
+        post: "Senior Pharmacist",
+        qualification: "---",
+      },
+      {
+        id: 2,
+        name: "Shiva Prasad B.M",
+        post: "Senior Pharmacist",
+        qualification: "---",
+      },
+      {
+        id: 3,
+        name: "Vijay Lakshmi",
+        post: "Senior Pharmacist",
+        qualification: "---",
+     
+      },
+      {
+        id: 4,
+        name: "Savith",
+        post: "Junior pharmacist",
+        qualification: "---",
+      },
+      {
+        id: 5,
+        name: "Ambika",
+        post: "Junior pharmacist",
+        qualification: "---",
+      },
+      {
+        id: 6,
+        name: "Manjunath T",
+        post: "Junior pharmacist",
+        qualification: "---",
+      },
+      {
+        id: 7,
+        name: "Ayesha",
+        post: "Junior pharmacist",
+        qualification: "---",
+      },
+      // Add more employees...
+    ],
+  },
   // Add more departments...
 ];
 
@@ -423,7 +472,8 @@ const departmentIcons = {
   " E.N.T": "fa fa-deaf",
   "Dermatology": "fa fa-allergies",
   "Casuality Medical Officers": "fa fa-ambulance",
-  "General Duty Medical Officers": "fa fa-user-md"
+  "General Duty Medical Officers": "fa fa-user-md",
+  "Pharmacy": "fa fa-pills",
 };
 
 const EmployeeRow = ({ id, name, post, qualification }) => (
