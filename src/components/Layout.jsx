@@ -103,7 +103,7 @@ const Layout = () => {
               <span>Visitors: {visitorsCount}</span> */}
      <span>Visitors:       
      
-     <img src="https://hitwebcounter.com/counter/counter.php?page=20016662&style=0002&nbdigits=5&type=page&initCount=2878" title="Counter Widget" alt="Visit counter For Websites"   border="0" />
+     <img src="https://hitwebcounter.com/counter/counter.php?page=20016860&style=0002&nbdigits=6&type=ip&initCount=02309" title="Counter Widget" alt="Visit counter For Websites"   border="0" />
     
 </span>
             </div>
