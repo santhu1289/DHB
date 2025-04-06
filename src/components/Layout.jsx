@@ -252,6 +252,11 @@ const Layout = () => {
                   icon: "fas fa-procedures",
                 },
                 {
+                  href: "/services/ent",
+                  label: "ENT",
+                  icon: "fas fa-ear-listen",
+                },
+                {
                   href: "/services/laboratory",
                   label: "Laboratory",
                   icon: "fas fa-vial",

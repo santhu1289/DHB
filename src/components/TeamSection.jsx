@@ -327,7 +327,7 @@ export const teamData = [
     ],
   },
   {
-    department: " E.N.T",
+    department: "ENT",
     employees: [
       {
         id: 1,
@@ -555,7 +555,7 @@ const departmentIcons = {
   "Dentistry": "fa fa-tooth",
   "Pathology": "fa fa-microscope",
   " Ophthalmology": "fa fa-eye",
-  " E.N.T": "fa fa-deaf",
+  "ENT": "fa fa-deaf",
   "Dermatology": "fa fa-allergies",
   "Casuality Medical Officers": "fa fa-ambulance",
   "General Duty Medical Officers": "fa fa-user-md",

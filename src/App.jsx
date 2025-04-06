@@ -37,6 +37,7 @@ import Laboratory from "./pages/services/Laboratory";
 import Radiology from "./pages/services/Radiology";
 import Pharmacy from "./pages/services/Pharmacy";
 import EmergencyServices from "./pages/services/EmergencyServices";
+import Ent from "./pages/services/Ent";
 
 function App() {
   return (
@@ -69,6 +70,7 @@ function App() {
                 path="services/emergency"
                 element={<EmergencyServices />}
               />
+              <Route path="services/ent" element={<Ent />} />
               {/* Add other service routes here */}
             </Route>
           </Routes>
