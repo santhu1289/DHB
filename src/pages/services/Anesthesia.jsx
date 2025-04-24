@@ -1,11 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import { teamData } from "../../components/TeamSection";
+import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 
 const Anesthesia = () => {
   const AnesthesiaData = teamData.find(
     (dept) => dept.department === "Anaesthesia"
   );
+
+  const formats = [".JPG", ".JPEG", ".PNG", ".WEBP"];
+  // Define image paths
+  const imagePaths = [1, 2, 3, 4, 5, 6].map(
+    (num) => `/src/assets/images/anestisia/anst${num}${formats.find(() => true)}`
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   if (!AnesthesiaData) {
     return (
@@ -16,6 +25,21 @@ const Anesthesia = () => {
       </div>
     );
   }
+
+      // Function to go to the next image
+      const handleNext = () => {
+        setSelectedIndex((prevIndex) =>
+          prevIndex === imagePaths.length - 1 ? 0 : prevIndex + 1
+        );
+      };
+    
+      // Function to go to the previous image
+      const handlePrev = () => {
+        setSelectedIndex((prevIndex) =>
+          prevIndex === 0 ? imagePaths.length - 1 : prevIndex - 1
+        );
+      };
+  
 
   return (
     <div className="p-6 bg-gradient-to-r from-green-300 to-green-500 text-green-900 rounded-lg">
@@ -32,6 +56,76 @@ const Anesthesia = () => {
           anesthesia.
         </p>
       </section>
+{/* Gallery Section */}
+<section className="bg-white shadow-lg rounded-lg p-6 mb-6">
+        <h2 className="text-2xl font-bold flex items-center mb-3 border-b-2 border-green-400 pb-2">
+          <i className="fas fa-images mr-2 text-green-600"></i> Ward & Facility Images
+        </h2>
+      
+          {/* Image Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {imagePaths.map((path, index) => (
+            <img
+              key={index}
+              src={path}
+              alt={`Anesthesia Facility ${index + 1}`}
+              className="w-full h-48 object-cover rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
+              onClick={() => setSelectedIndex(index)}
+            />
+          ))}
+        </div>
+       
+      </section>
+
+      {/* Fullscreen Image Preview Modal */}
+            {selectedIndex !== null && (
+              <div
+                className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+                onClick={() => setSelectedIndex(null)}
+              >
+                <div className="relative flex items-center">
+                  {/* Previous Button */}
+                  <button
+                    className="absolute left-4 text-white bg-green-700 p-3 rounded-full hover:bg-green-500 transition"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePrev();
+                    }}
+                  >
+                    <FaArrowLeft size={18} />
+                  </button>
+      
+                  {/* Display Enlarged Image */}
+                  <img
+                    src={imagePaths[selectedIndex]}
+                    alt="Enlarged View"
+                    className="max-w-full max-h-[90vh] rounded-lg shadow-lg"
+                  />
+      
+                  {/* Next Button */}
+                  <button
+                    className="absolute right-4 text-white bg-green-700 p-3 rounded-full hover:bg-green-500 transition"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNext();
+                    }}
+                  >
+                    <FaArrowRight size={18} />
+                  </button>
+      
+                  {/* Close Button */}
+                  <button
+                    className="absolute top-4 right-4 text-white bg-green-600 p-3 rounded-full hover:bg-green-300 transition"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedIndex(null);
+                    }}
+                  >
+                    <FaTimes size={18} />
+                  </button>
+                </div>
+              </div>
+            )}
 
       <section className="bg-green-50 shadow-lg rounded-lg p-6 mb-6">
         <h2 className="text-2xl font-bold flex items-center mb-3 border-b-2 border-green-400 pb-2">

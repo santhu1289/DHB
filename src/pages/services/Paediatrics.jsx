@@ -10,7 +10,7 @@ const Paediatrics = () => {
 
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
-    (num) => `/src/assets/images/paediatrics${num}.JPG`
+    (num) => `/src/assets/images/peadiatric/paediatrics${num}.JPG`
   );
 
   // State to track selected image index
