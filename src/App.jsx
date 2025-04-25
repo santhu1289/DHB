@@ -38,6 +38,7 @@ import Radiology from "./pages/services/Radiology";
 import Pharmacy from "./pages/services/Pharmacy";
 import EmergencyServices from "./pages/services/EmergencyServices";
 import Ent from "./pages/services/Ent";
+import Gallery from "./Gallery";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
               {/* Navbar links */}
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
-              <Route path="blogs" element={<Blogs />} />
+              <Route path="blogs" element={<Home />} />
               <Route path="activities" element={<Activities />} />
               <Route path="contact" element={<Contact />} />
 
@@ -71,6 +72,7 @@ function App() {
                 element={<EmergencyServices />}
               />
               <Route path="services/ent" element={<Ent />} />
+              <Route path="/gallery/:category" element={<Gallery />} />
               {/* Add other service routes here */}
             </Route>
           </Routes>
