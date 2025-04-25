@@ -14,14 +14,20 @@
     You should have received a copy of the GNU General Public License
     along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
-
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App"; // Importing the main App component
-import "./index.css"; // Importing global styles
+import { BrowserRouter, HashRouter } from "react-router-dom"; // ✅ Import both routers
+import App from "./App";
+import "./index.css";
+
+// Dynamically select the router based on the environment
+const Router = import.meta.env.MODE === 'development' ? BrowserRouter : HashRouter;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Router> {/* ✅ Use the dynamically selected Router */}
+      <App />
+    </Router>
   </React.StrictMode>
 );
+

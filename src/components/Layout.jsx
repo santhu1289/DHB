@@ -6,8 +6,8 @@ import "font-awesome/css/font-awesome.min.css";
 import { useTheme } from "./ThemeContext"; // Import the custom hook
 import QRS from "../assets/images/ors.png";
 import eHospital from "../assets/images/eHospital.png";
-import FloatingBackground from "./FloatingBackground ";
-//import { FloatingBackground } from "./FloatingBackground ";
+import FloatingBackground from "./FloatingBackground";
+
 
 
 // eslint-disable-next-line react/prop-types
