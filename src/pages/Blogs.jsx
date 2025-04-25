@@ -5,17 +5,18 @@ import {
   faCalendarAlt,
   faFolderOpen,
   faBookOpen,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Blogs = () => {
-  // Sample Blog Data
   const blogsData = [
     {
       id: 1,
-      title: "The Future of Healthcare",
+      title: "Brain Health Initiatives",
       category: "Health",
       date: "2025-03-05",
-      image: "https://source.unsplash.com/400x250/?healthcare,hospital",
+      image: "./src/assets/images/Brain Health/bh1.jpg",
+      content: "Details about Brain Health Initiatives...",
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ const Blogs = () => {
       category: "Environment",
       date: "2025-03-10",
       image: "https://source.unsplash.com/400x250/?nature,eco",
+      content: "Details about Sustainable Living...",
     },
     {
       id: 3,
@@ -30,6 +32,7 @@ const Blogs = () => {
       category: "Education",
       date: "2025-03-15",
       image: "https://source.unsplash.com/400x250/?technology,education",
+      content: "Insights into AI in Education...",
     },
     {
       id: 4,
@@ -37,20 +40,20 @@ const Blogs = () => {
       category: "Health",
       date: "2025-03-20",
       image: "https://source.unsplash.com/400x250/?mentalhealth,therapy",
+      content: "Important facts on Mental Health...",
     },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
-  // Filter blogs based on category
   const filteredBlogs =
     selectedCategory === "All"
       ? blogsData
       : blogsData.filter((blog) => blog.category === selectedCategory);
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-green-50 min-h-screen">
-      {/* Header */}
+    <div className="max-w-6xl mx-auto p-6 bg-green-50 min-h-screen relative">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,7 +80,8 @@ const Blogs = () => {
                 : "bg-green-200 text-green-800 hover:bg-green-300"
             }`}
           >
-            <FontAwesomeIcon icon={faFolderOpen} className="mr-2" /> {category}
+            <FontAwesomeIcon icon={faFolderOpen} className="mr-2" />
+            {category}
           </motion.button>
         ))}
       </div>
@@ -117,13 +121,50 @@ const Blogs = () => {
                 />
                 <span className="font-medium">{blog.date}</span>
               </p>
-              <button className="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all">
+              <button
+                onClick={() => setSelectedBlog(blog)}
+                className="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all"
+              >
                 Read More
               </button>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Modal Dialog */}
+      {selectedBlog && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-40 flex items-center justify-center px-4">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            className="bg-white rounded-xl p-6 max-w-xl w-full shadow-xl relative"
+          >
+            <button
+              onClick={() => setSelectedBlog(null)}
+              className="absolute top-2 right-2 text-gray-600 hover:text-red-500"
+            >
+              <FontAwesomeIcon icon={faTimes} size="lg" />
+            </button>
+            <img
+              src={selectedBlog.image}
+              alt={selectedBlog.title}
+              className="w-full h-60 object-cover rounded-lg mb-4"
+            />
+            <h2 className="text-2xl font-bold text-green-700 mb-2">
+              {selectedBlog.title}
+            </h2>
+            <p className="text-sm text-gray-600 mb-4">
+              <FontAwesomeIcon icon={faCalendarAlt} className="mr-1" />
+              {selectedBlog.date} |{" "}
+              <FontAwesomeIcon icon={faFolderOpen} className="mr-1" />
+              {selectedBlog.category}
+            </p>
+            <p className="text-gray-700">{selectedBlog.content}</p>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
