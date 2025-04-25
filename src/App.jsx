@@ -21,7 +21,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Blogs from "./pages/Blogs";
+//import Blogs from "./pages/Blogs";
 import Activities from "./pages/Activities";
 import Contact from "./pages/Contact";
 import GeneralMedicine from "./pages/services/GeneralMedicine";
