@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useMemo } from "react";
 import { Outlet } from "react-router-dom";
-import axios from "axios";
+
 import "font-awesome/css/font-awesome.min.css";
 import { useTheme } from "./ThemeContext"; // Import the custom hook
 import QRS from "../assets/images/ors.png";
@@ -28,44 +28,8 @@ const Layout = () => {
   const { isLightOn, toggleLight } = useTheme(); // Use the context to get theme state and toggle function
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const API_URL = "http://localhost:5000/api/visitors";
-
-  // // Fetch visitors count from the server
-  // useEffect(() => {
-  //   const fetchVisitorsCount = async () => {
-  //     try {
-  //       const response = await axios.get(API_URL);
-  //       setVisitorsCount(response.data.count); // Set the initial visitors count from the API
-  //     } catch (error) {
-  //       console.error("Error fetching visitors count:", error);
-  //     }
-  //   };
-
-  //   fetchVisitorsCount();
-  // }, []);
-
-  // Increment visitors count once per session
-  useEffect(() => {
-    const incrementVisitorsCount = async () => {
-      if (!sessionStorage.getItem("visitorVisited")) {
-        try {
-          // Send POST request to increment visitors count
-          await axios.post(API_URL);
-
-          // Fetch updated count from the server
-          //const response = await axios.get(API_URL);
-          //setVisitorsCount(response.data.count);
-
-          // Mark this session as visited
-          sessionStorage.setItem("visitorVisited", "true");
-        } catch (error) {
-          console.error("Error updating visitors count:", error);
-        }
-      }
-    };
-
-    incrementVisitorsCount();
-  }, []); // Ensure this runs only once on mount
+  
+  
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -95,7 +59,12 @@ const Layout = () => {
                 <i className="fas fa-envelope mr-2"></i>
                 <span>bellaryds@gmail.com</span>
               </div>
+              <div className="flex items-center">
+                <i className="fas fa-envelope mr-2"></i>
+                <span>Last Updated 26/04/2025</span>
+              </div>
             </div>
+            
 
             {/* Visitors Count */}
             <div className="flex items-center space-x-2">
@@ -432,7 +401,7 @@ const Layout = () => {
         <div className="bg-green-900 py-4">
           <div className="container mx-auto text-center text-green-200">
             <p>
-              &copy; 2024 District Hospital Ballari. Licensed under{" "}
+              &copy; 2025 District Hospital Ballari. Licensed under{" "}
               <a
                 href="https://www.gnu.org/licenses/gpl-3.0.html"
                 target="_blank"
