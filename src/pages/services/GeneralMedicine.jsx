@@ -11,7 +11,11 @@ const GeneralMedicine = () => {
   const formats = [".jpg", ".JPEG", ".PNG", ".WEBP"];
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
+<<<<<<< HEAD
     (num) => `/img/genreal medicin/general${num}${formats.find(() => true)}`
+=======
+    (num) => `/public/img/genreal medicin/general${num}${formats.find(() => true)}`
+>>>>>>> old/fix
   );
 
   // State to track selected image index
