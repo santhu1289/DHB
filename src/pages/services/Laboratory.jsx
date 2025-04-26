@@ -11,7 +11,7 @@ const labData = teamData.find(
     const formats = [".JPG", ".JPEG", ".PNG", ".WEBP"];
     // Define image paths
     const imagePaths = [0,1, 2, 3, 4, 5, 6,7,8,9,10].map(
-      (num) => `/src/assets/images/lab/lab${num}${formats.find(() => true)}`
+      (num) => `/public/img/lab/lab${num}${formats.find(() => true)}`
     );
   
     // State to track selected image index

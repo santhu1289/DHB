@@ -11,7 +11,7 @@ const GeneralMedicine = () => {
   const formats = [".JPG", ".JPEG", ".PNG", ".WEBP"];
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
-    (num) => `/src/assets/images/genreal medicin/general${num}${formats.find(() => true)}`
+    (num) => `/public/img/genreal medicin/general${num}${formats.find(() => true)}`
   );
 
   // State to track selected image index

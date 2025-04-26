@@ -10,7 +10,7 @@ const Gynecology = () => {
   const formats = [".JPEG", ".JPG", ".PNG", ".WEBP"];
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
-    (num) => `/src/assets/images/gyny/gyny${num}${formats.find(() => true)}`
+    (num) => `/public/img/gyny/gyny${num}${formats.find(() => true)}`
   ); 
   const [selectedIndex, setSelectedIndex] = useState(null);
   if (!GynecologyData) {

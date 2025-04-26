@@ -21,7 +21,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Blogs from "./pages/Blogs";
+//import Blogs from "./pages/Blogs";
 import Activities from "./pages/Activities";
 import Contact from "./pages/Contact";
 import GeneralMedicine from "./pages/services/GeneralMedicine";
@@ -38,7 +38,7 @@ import Radiology from "./pages/services/Radiology";
 import Pharmacy from "./pages/services/Pharmacy";
 import EmergencyServices from "./pages/services/EmergencyServices";
 import Ent from "./pages/services/Ent";
-import Gallery from "./Gallery";
+
 
 function App() {
   return (
@@ -72,7 +72,7 @@ function App() {
                 element={<EmergencyServices />}
               />
               <Route path="services/ent" element={<Ent />} />
-              <Route path="/gallery/:category" element={<Gallery />} />
+              
               {/* Add other service routes here */}
             </Route>
           </Routes>
