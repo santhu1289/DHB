@@ -8,10 +8,10 @@ const Anesthesia = () => {
     (dept) => dept.department === "Anaesthesia"
   );
 
-  const formats = [".JPG", ".JPEG", ".PNG", ".WEBP"];
+  const formats = [".jpg", ".JPEG", ".PNG", ".WEBP"];
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
-    (num) => `/public/img/anestisia/anst${num}${formats.find(() => true)}`
+    (num) => `/img/anestisia/anst${num}${formats.find(() => true)}`
   );
 
   const [selectedIndex, setSelectedIndex] = useState(null);

@@ -7,10 +7,10 @@ const Gynecology = () => {
   const GynecologyData = teamData.find(
     (dept) => dept.department === "Obstetrics and Gynaecology"
   );
-  const formats = [".JPEG", ".JPG", ".PNG", ".WEBP"];
+  const formats = [".jpeg", ".JPG", ".PNG", ".WEBP"];
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
-    (num) => `/public/img/gyny/gyny${num}${formats.find(() => true)}`
+    (num) => `/img/gyny/gyny${num}${formats.find(() => true)}`
   ); 
   const [selectedIndex, setSelectedIndex] = useState(null);
   if (!GynecologyData) {
