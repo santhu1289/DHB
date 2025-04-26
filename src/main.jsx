@@ -20,14 +20,14 @@ import { BrowserRouter, HashRouter } from "react-router-dom"; // ✅ Import both
 import App from "./App";
 import "./index.css";
 
-// Dynamically select the router based on the environment
-const Router = import.meta.env.MODE === 'development' ? BrowserRouter : HashRouter;
+const RouterComponent = import.meta.env.MODE === 'development' ? BrowserRouter : HashRouter;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router> {/* ✅ Use the dynamically selected Router */}
+    <RouterComponent> {/* ✅ Correctly rendered JSX */}
       <App />
-    </Router>
+    </RouterComponent>
   </React.StrictMode>
 );
+
 
