@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom"; // Use this only for internal links
 
 const SupportServices = () => {
   const services = [
@@ -62,37 +63,49 @@ const SupportServices = () => {
   ];
 
   return (
-    <div className="container mx-auto py-16">
-      <div className="text-center max-w-xl mx-auto mb-10">
+    <div className="container mx-auto py-16 px-4">
+      <div className="text-center max-w-3xl mx-auto mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
           We Provide Some Support Services at our Hospital
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 flex flex-col justify-between text-center"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition p-6 flex flex-col justify-between text-center"
           >
-            {/* Icon */}
             <div>
-              <div className="text-primary text-5xl mb-4">
-                <i className={`fa ${service.icon} text-green-600`}></i>
+              <div className="flex justify-center items-center mb-4">
+                <div className="bg-green-100 p-4 rounded-full">
+                  <i className={`fa ${service.icon} text-3xl text-green-600`}></i>
+                </div>
               </div>
-              {/* Title */}
               <h4 className="text-xl font-semibold text-gray-800 mb-2">
                 {service.title}
               </h4>
-              {/* Description */}
-              <p className="text-gray-600">{service.description}</p>
+              <p className="text-gray-600 text-sm">{service.description}</p>
             </div>
-            {/* Button */}
-            <a
-              href={service.link}
-              className="btn bg-green-600 text-white px-4 py-2 mt-4 rounded shadow hover:bg-green-700"
-            >
-              Read More
-            </a>
+
+            {/* Use Link if the link is internal */}
+            {service.link.startsWith("/") ? (
+              <Link
+                to={service.link}
+                className="inline-block bg-green-600 text-white px-4 py-2 mt-4 rounded hover:bg-green-700 transition"
+                role="button"
+              >
+                Read More
+              </Link>
+            ) : (
+              <a
+                href={service.link}
+                className="inline-block bg-green-600 text-white px-4 py-2 mt-4 rounded hover:bg-green-700 transition"
+                role="button"
+              >
+                Read More
+              </a>
+            )}
           </div>
         ))}
       </div>

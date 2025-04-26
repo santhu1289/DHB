@@ -578,34 +578,36 @@ const DepartmentSection = ({ department, employees }) => (
       <i className={`${departmentIcons[department]} text-green-600 text-xl`}></i>
       <h3 className="text-xl font-semibold text-green-800">{department}</h3>
     </div>
-    <table className="w-full text-left border-collapse">
-      <thead>
-        <tr className="bg-green-200 hover:font-bold">
-          <th className="px-4 py-2 text-green-700">SI.NO</th>
-          <th className="px-4 py-2 text-green-700">Name of Employee</th>
-          <th className="px-4 py-2 text-green-700">Post</th>
-          <th className="px-4 py-2 text-green-700">Qualification</th>
-        </tr>
-      </thead>
-      <tbody className="hover:font-bold">
-        {employees.map((employee, index) => (
-          <EmployeeRow
-            key={index}
-            id={index + 1}
-            name={employee.name}
-            post={employee.post}
-            qualification={employee.qualification}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div className="overflow-x-auto">
+      <table className="w-full text-left border-collapse">
+        <thead>
+          <tr className="bg-green-200 hover:font-bold">
+            <th className="px-4 py-2 text-green-700">SI.NO</th>
+            <th className="px-4 py-2 text-green-700">Name of Employee</th>
+            <th className="px-4 py-2 text-green-700">Post</th>
+            <th className="px-4 py-2 text-green-700">Qualification</th>
+          </tr>
+        </thead>
+        <tbody className="hover:font-bold">
+          {employees.map((employee, index) => (
+            <EmployeeRow
+              key={index}
+              id={index + 1}
+              name={employee.name}
+              post={employee.post}
+              qualification={employee.qualification}
+            />
+          ))}
+        </tbody>
+      </table>
+    </div>
   </div>
 );
 
 const TeamSection = () => (
   <div className="container mx-auto py-10 px-4">
     <div className="text-center mb-10">
-      <h1 className="text-3xl font-bold text-green-800  hover:text-green-400">
+      <h1 className="text-3xl font-bold text-green-800 hover:text-green-400">
         Meet Our Professional Team Members
       </h1>
     </div>
@@ -618,5 +620,6 @@ const TeamSection = () => (
     ))}
   </div>
 );
+
 
 export default TeamSection;
