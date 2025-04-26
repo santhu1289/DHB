@@ -60,8 +60,8 @@ const Layout = () => {
                 <span>bellaryds@gmail.com</span>
               </div>
               <div className="flex items-center">
-                <i className="fas fa-envelope mr-2"></i>
-                <span>Last Updated 26/04/2025</span>
+                <i className="fa-solid fa-rotate-right mr-2"></i>
+                <span>Latest Update on 26/04/2025</span>
               </div>
             </div>
             
