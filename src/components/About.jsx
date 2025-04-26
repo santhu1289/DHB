@@ -33,7 +33,7 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* Image + Text Section */}
-        <div className="relative bg-green-800 text-white p-6 rounded-lg shadow-md order-first lg:order-last">
+        <div className="relative bg-green-800 text-white p-6 rounded-lg shadow-md">
           <img
             src={Abt}
             alt="Hospital"

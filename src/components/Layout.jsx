@@ -26,7 +26,7 @@ const ScrollableSidebar = ({ isOpen, isLightOn, children }) => (
 const Layout = () => {
   //const [visitorsCount, setVisitorsCount] = useState(0);
   const { isLightOn, toggleLight } = useTheme(); // Use the context to get theme state and toggle function
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth >= 768);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   
@@ -50,16 +50,16 @@ const Layout = () => {
         >
           <div className="container mx-auto flex flex-wrap justify-between items-center px-4">
             {/* Contact Information */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 sm:space-x-1">
               <div className="flex items-center">
                 <i className="fas fa-phone mr-2"></i>
                 <span>+91 8392 275255</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center sm:space-x-1">
                 <i className="fas fa-envelope mr-2"></i>
                 <span>bellaryds@gmail.com</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center sm:space-x-1">
                 <i className="fa-solid fa-rotate-right mr-2"></i>
                 <span>Latest Update on 26/04/2025</span>
               </div>
@@ -67,7 +67,7 @@ const Layout = () => {
             
 
             {/* Visitors Count */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 sm:space-x-1">
                <i className="fas fa-users mr-2"></i>
             {/* <span>Visitors: {visitorsCount}</span> */}
      <span>Visitors:   </span>   
