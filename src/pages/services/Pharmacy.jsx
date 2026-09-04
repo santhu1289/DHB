@@ -12,7 +12,7 @@ const Pharmacy = () => {
     const formats = [".JPG", ".JPEG", ".PNG", ".WEBP"];
     // Define image paths
     const imagePaths = [1, 2, 3, 4, 5, 6].map(
-      (num) => `/public/img/pharmacy/pharmacy${num}${formats.find(() => true)}`
+      (num) => `/img/pharmacy/pharmacy${num}${formats.find(() => true)}`
     );
   
     // State to track selected image index

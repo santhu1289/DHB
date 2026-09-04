@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { teamData } from "../../components/TeamSection";
@@ -8,14 +7,10 @@ const GeneralMedicine = () => {
   const generalMedicineData = teamData.find(
     (dept) => dept.department === "General Medicine"
   );
-  const formats = [".jpg", ".JPEG", ".PNG", ".WEBP"];
+
   // Define image paths
   const imagePaths = [1, 2, 3, 4, 5, 6].map(
-<<<<<<< HEAD
-    (num) => `/img/genreal medicin/general${num}${formats.find(() => true)}`
-=======
-    (num) => `/public/img/genreal medicin/general${num}${formats.find(() => true)}`
->>>>>>> old/fix
+    (num) => `/img/genreal medicin/general${num}.jpg`
   );
 
   // State to track selected image index
@@ -30,23 +25,20 @@ const GeneralMedicine = () => {
       </div>
     );
   }
-  
-    // Function to go to the next image
-    const handleNext = () => {
-      setSelectedIndex((prevIndex) =>
-        prevIndex === imagePaths.length - 1 ? 0 : prevIndex + 1
-      );
-    };
-  
-    // Function to go to the previous image
-    const handlePrev = () => {
-      setSelectedIndex((prevIndex) =>
-        prevIndex === 0 ? imagePaths.length - 1 : prevIndex - 1
-      );
-    };
-  
 
- 
+  // Function to go to the next image
+  const handleNext = () => {
+    setSelectedIndex((prevIndex) =>
+      prevIndex === imagePaths.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Function to go to the previous image
+  const handlePrev = () => {
+    setSelectedIndex((prevIndex) =>
+      prevIndex === 0 ? imagePaths.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <div className="p-6 bg-gradient-to-r from-green-300 to-green-500 text-green-900 rounded-lg">
